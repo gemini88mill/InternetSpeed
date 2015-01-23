@@ -1,8 +1,19 @@
 /**
+ *  Java Project - InternetSpeed.
+ *  This project is used to gauge the average internet speed over
+ *  a period of time
+ *
+ *  Chrono of this program:
+ *  Starts program, sends to class DownloadFile()
+ *
  * Created by raphael on 1/22/15.
  */
 public class ProgramRun {
 
+    /**
+     * Starts main program
+     * @param args
+     */
     public static void main(String[] args){
         //start program
         String url = "http://speedtest.reliableservers.com/10MBtest.bin";
