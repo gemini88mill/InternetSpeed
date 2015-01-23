@@ -26,7 +26,7 @@ public class DownloadFile {
             URLConnection conn = link.openConnection();
 
             InputStream in = conn.getInputStream();
-            byte[] buff = new byte[1024];
+            byte[] buff = new byte[4096];
             int n = -1;
 
             OutputStream out = new FileOutputStream( fileName );
