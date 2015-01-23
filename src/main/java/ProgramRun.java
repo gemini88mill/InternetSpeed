@@ -9,16 +9,24 @@ public class ProgramRun {
 
         int MBS = 10;
         double Mbits = MBS * 8;
+        double mbitsPerSec = 0;
+        double avg = 0;
 
         DownloadFile downloadFile = new DownloadFile(url);
 
-        long start = System.currentTimeMillis();
-        downloadFile.getwebPage();
-        double elapsedTime = System.currentTimeMillis() - start;
 
-        double secsToDownload = elapsedTime / 1000;
+        for (int x = 0; x < 10; x++) {
+            long start = System.currentTimeMillis();
+            downloadFile.getwebPage();
+            double elapsedTime = System.currentTimeMillis() - start;
 
-        System.out.println(Mbits / secsToDownload );
+            double secsToDownload = elapsedTime / 1000;
+            mbitsPerSec = Mbits / secsToDownload;
 
+            System.out.println("Test: "+ (x + 1)  + " " + Mbits / secsToDownload);
+
+            avg = avg + mbitsPerSec;
+        }
+        System.out.println("Average Connection Speed: " + avg / MBS);
     }
 }

@@ -35,13 +35,15 @@ public class DownloadFile {
                 out.write(buff, 0, n);
             }
 
+            in.close();
+            out.close();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        System.out.println("done");
+       // System.out.println("done");
 
 
     }
